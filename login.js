@@ -4,10 +4,7 @@
 // Get user data
 // Display user data
 
-// function waitForThreeSecond() {
-//     let ms = 3000 + new Date().getTime();
-//     while (new Date() < ms) { }
-// }
+
 
 function register(callback) {
     setTimeout(() => {
@@ -16,21 +13,24 @@ function register(callback) {
     }, 2000)
 }
 
-function email() {
+function email(callback) {
     setTimeout(() => {
         console.log("Email");
-    }, 1000)
+        callback();
+    }, 5000)
 }
 
-function login() {
+function login(callback) {
     setTimeout(() => {
         console.log("Login");
-    }, 1000)
+        callback();
+    }, 3000)
 }
 
-function getData() {
+function getData(callback) {
     setTimeout(() => {
         console.log("Get User Data");
+        callback();
     }, 1000)
 }
 function displayData() {
@@ -40,11 +40,17 @@ function displayData() {
 }
 
 
-register( function(){
-    email()
-    login()
-    getData()
-    displayData()
+register(function () {
+    email(function () {
+        login(function () {
+            getData(function () {
+                displayData()
+            })
+
+        })
+
+    })
+
 })
 
 console.log("Other application display")
