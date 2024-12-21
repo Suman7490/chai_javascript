@@ -2,63 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./clock.js" defer></script>
-    <style>
-  body{
-    min-height: 100vh;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <title>Document</title>
+  <script src="./clock.js" defer></script>
+  <script src="./closure.js"></script>
+  <style>
+    body {
+      min-height: 100vh;
 
-  }
-  .clock{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  .clock span{
-    font-size: 3em;
-    font-weight: bolder;
-  }
-   .analog-clock{
-    height: 250px;
-    width: 250px;
-    border-radius: 100%;
-    background-color: lightcoral;
-   }
-   .analog-clock span{
-    font-size: 1.5em;
-    font-weight: bold;
-   }
+    }
 
-    </style>
+    .clock {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .clock span {
+      font-size: 3em;
+      font-weight: bolder;
+    }
+
+    .analog-clock {
+      height: 250px;
+      width: 250px;
+      border-radius: 100%;
+      background-color: lightcoral;
+    }
+
+    .analog-clock span {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
-        <div class="analog-clock">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>4</span>
-          <span>5</span>
-          <span>6</span>
-          <span>7</span>
-          <span>8</span>
-          <span>9</span>
-          <span>10</span>
-          <span>11</span>
-          <span>12</span>
-        </div>
-        <div class="clock">
-            <span class="hours"></span>
-            <span>:</span>
-            <span class="minutes"></span>
-            <span>:</span>
-            <span class="seconds"></span>
-            <span class="amorpm">AM</span>
-        </div>
-    </div>
+
+  <script>
+   function displayAnswer(){
+    const arr = ["Java", "JavaScript", "C#", "B & C Both"]
+    const selectedOption = document.querySelector('input[name="language"]:checked');
+    if(!selectedOption){
+      alert("Please Select an answer")
+    } if(selectedOption.value === arr[3]){
+      document.getElementById("answer").innerHTML = "Correct answer";
+    } else{
+      alert("Incorrect answer. Try again")
+    }
+  }
+
+
+  </script>
+
+  <div class="clock">
+    <span class="hours"></span>
+    <span>:</span>
+    <span class="minutes"></span>
+    <span>:</span>
+    <span class="seconds"></span>
+    <span class="amorpm">AM</span>
+  </div>
+  <form>
+    <div class="">
+      <p>Q.1 Node js is written in:-</p>
+      <div class="">
+        <input type="radio" name="language" value="Java"/>
+        <label>Java</label>
+      </div>
+
+
+      <div class="">
+        <input type="radio" name="language" value="JavaScript" />
+        <label>JavaScript</label>
+      </div>
+
+      <div class="">
+        <input type="radio" name="language" value="C#" />
+        <label>C#</label>
+      </div>
+
+      <div class="">
+        <input type="radio" name="language" value="B & C Both" />
+        <label>B & C Both</label>
+      </div>
+  
+      <button type="submit" onclick="displayAnswer()">Submit</button>
+      <p id="answer"></p>
+      
+  </form>
+  </div>
 </body>
 
 </html>

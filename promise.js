@@ -76,21 +76,32 @@ function displayData() {
 //     })
 
 // ************* Using Async await method of calling functions ***********
-async function authenticate(){
-try {
-    await register()
-    await email()
-    await login()
-    await getData()
-    await displayData()
-} catch (err) {
-    console.log(err);
-    throw err;
-}
-}
-authenticate()
-.then(() => {
-    console.log("All set");    
-})
+// async function authenticate(){
+// try {
+//     await register()
+//     await email()
+//     await login()
+//     await getData()
+//     await displayData()
+// } catch (err) {
+//     console.log(err);
+//     throw err;
+// }
+// }
+// authenticate()
+// .then(() => {
+//     console.log("All set");    
+// })
 
-console.log("Other application display")
+// console.log("Other application display")
+// const arr = [10, 20, 30]; 
+// arr[100] = 50; 
+// console.log(arr.length); 
+// console.log(arr)
+// let a = 0;
+//  console.log("1", a++);
+//  console.log("2", ++a);
+//  console.log("3", a);
+//  console.log("Use of Reduce:", [1, 2, 3].reduce((a, b) => a * b, 2)); 
+
+
