@@ -103,5 +103,27 @@ function displayData() {
 //  console.log("2", ++a);
 //  console.log("3", a);
 //  console.log("Use of Reduce:", [1, 2, 3].reduce((a, b) => a * b, 2)); 
+const cart = ["shoes", "Paint", "Kurta"]
+
+createOrder(cart, function (orderId) {
+    proceedToPayment(orderId, function (paymentInfo) {
+        showOrderSummary(paymentInfo, function () {
+            updatedWallteBalance()
+        })
+    })
+})
 
 
+// Promise Chai
+createOrder(cart)
+.then(function (orderId){
+   return proceedToPayment(orderId)
+})
+.then(function (paymentInfo){
+   return showOrderSummary(paymentInfo)
+})
+.then(function (paymentInfo){
+   return updatedWallteBalance(paymentInfo)
+})
+
+// Promise Creation

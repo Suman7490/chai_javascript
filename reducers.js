@@ -57,7 +57,7 @@ const similarAge2 = users.reduce(function (acc, curr) {
     return acc
 }, {})
 
-console.log("greatest age in the users by reduce function:", similarAge2)
+console.log("Greatest age in the users by reduce function:", similarAge2)
 // ***************************************************
 
 const sameAgeUser = users.reduce(function (acc, curr) {
